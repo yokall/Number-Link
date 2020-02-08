@@ -1,6 +1,9 @@
-function Square(x, y) {
+function Square(x, y, start, end) {
   this.x = x;
   this.y = y;
+  this.startSquare = start;
+  this.endSquare = end;
+
   this.width = 50;
   this.height = 50;
 
@@ -15,6 +18,22 @@ function Square(x, y) {
     }
 
     rect(this.x, this.y, this.width, this.height);
+
+    if (this.startSquare > 0) {
+      fill(156, 156, 156);
+      ellipse(this.x + 25, this.y + 25, 40, 40);
+      fill('white');
+      textSize(32);
+      text(this.startSquare, this.x + 15, this.y + 35);
+    }
+
+    if (this.endSquare > 0) {
+      fill(156, 156, 156);
+      ellipse(this.x + 25, this.y + 25, 40, 40);
+      fill('white');
+      textSize(32);
+      text("X", this.x + 15, this.y + 35);
+    }
   }
 
   this.center = function () {
