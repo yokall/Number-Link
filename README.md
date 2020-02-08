@@ -17,10 +17,10 @@ Right now there is
 * 5x5 grid which you can draw paths onto
 * start and end squares
 * paths can only be started at start tiles
+* paths can only be as long as the start square number
 
 # Future plans
 
-* Limit length of path based on starting number tile
 * Save completed paths
 * Remove paths
 * Implement a solver

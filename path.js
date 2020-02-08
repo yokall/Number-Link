@@ -2,9 +2,14 @@ function Path() {
   var points = [];
   var currentPoint = null;
   var previousPoint = null;
+  var maxLength = 100;
 
   this.length = function () {
     return points.length;
+  }
+
+  this.setMaxLength = function (length) {
+    maxLength = length;
   }
 
   this.addPoint = function (point) {
@@ -24,6 +29,12 @@ function Path() {
         if (points[i].x == point.x && points[i].y == point.y) {
           return;
         }
+      }
+
+
+      // path can be longer than max length
+      if (points.length == maxLength) {
+        return;
       }
 
       points.push(point);

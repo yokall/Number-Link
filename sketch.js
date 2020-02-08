@@ -14,6 +14,10 @@ function mouseDragged() {
 
   if (currentSquare) {
     if ((currentPath.length() == 0 && currentSquare.startSquare > 0) || currentPath.length() > 0) {
+      if (currentSquare.startSquare > 0) {
+        currentPath.setMaxLength(currentSquare.startSquare);
+      }
+
       currentPath.addPoint(currentSquare.center());
     }
   }
