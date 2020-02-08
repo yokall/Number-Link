@@ -27,8 +27,6 @@ function Path() {
       previousPoint = currentPoint;
       currentPoint = point;
     }
-
-    console.log(points);
   }
 
   this.draw = function () {
