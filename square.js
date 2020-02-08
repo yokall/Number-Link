@@ -11,7 +11,7 @@ function Square(x, y) {
       mouseY < this.y + this.height) {
       fill('red');
     } else {
-      noFill();
+      fill(18, 17, 17);
     }
 
     rect(this.x, this.y, this.width, this.height);
