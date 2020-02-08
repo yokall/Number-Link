@@ -10,16 +10,20 @@ function setup() {
 }
 
 function mouseDragged() {
-  var currentPoint = grid.getMousePoint();
+  var currentSquare = grid.getMouseSquare();
 
-  if (currentPoint) {
-    currentPath.addPoint(currentPoint);
+  if (currentSquare) {
+    if ((currentPath.length() == 0 && currentSquare.startSquare > 0) || currentPath.length() > 0) {
+      currentPath.addPoint(currentSquare.center());
+    }
   }
 }
 
 function mouseClicked() {
-  paths.push(currentPath);
-  currentPath = new Path();
+  if (currentPath.length > 0) {
+    paths.push(currentPath);
+    currentPath = new Path();
+  }
 }
 
 function draw() {

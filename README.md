@@ -12,16 +12,17 @@ To create a playable Numberlink puzzle and eventually implement a solver
 
 # Current progress
 
-Right now there is just
+Right now there is
 
 * 5x5 grid which you can draw paths onto
 * start and end squares
+* paths can only be started at start tiles
 
 # Future plans
 
-* Only allow paths to start at number squares
 * Limit length of path based on starting number tile
 * Save completed paths
+* Remove paths
 * Implement a solver
 
 # Try it

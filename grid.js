@@ -43,7 +43,7 @@ function Grid() {
     }
   }
 
-  this.getMousePoint = function () {
+  this.getMouseSquare = function () {
     for (y = this.grid.length - 1; y >= 0; y--) {
       if (this.grid[y][0].y < mouseY) {
         for (x = this.grid[y].length - 1; x >= 0; x--) {
@@ -52,7 +52,7 @@ function Grid() {
 
             if (Math.abs(centerPoint.x - mouseX) < 15 &&
               Math.abs(centerPoint.y - mouseY) < 15) {
-              return centerPoint;
+              return this.grid[y][x];
             }
           }
         }

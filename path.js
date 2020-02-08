@@ -3,6 +3,10 @@ function Path() {
   var currentPoint = null;
   var previousPoint = null;
 
+  this.length = function () {
+    return points.length;
+  }
+
   this.addPoint = function (point) {
     // cant move diagonally
     if (currentPoint && currentPoint.x != point.x && currentPoint.y != point.y) {
