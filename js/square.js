@@ -21,7 +21,7 @@ class Square {
     return this._startSquare;
   }
 
-  get endSquare() {
+  get isEndSquare() {
     return this._endSquare;
   }
 
