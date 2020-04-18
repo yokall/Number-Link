@@ -45,15 +45,15 @@ class Grid {
     }
   }
 
-  getMouseSquare() {
+  getSquareAtPosition(posX, posY) {
     for (var y = this._grid.length - 1; y >= 0; y--) {
-      if (this._grid[y][0].y < mouseY) {
+      if (this._grid[y][0].y < posY) {
         for (var x = this._grid[y].length - 1; x >= 0; x--) {
-          if (this._grid[y][x].x < mouseX) {
+          if (this._grid[y][x].x < posX) {
             var centerPoint = this._grid[y][x].center();
 
-            if (Math.abs(centerPoint.x - mouseX) < 15 &&
-              Math.abs(centerPoint.y - mouseY) < 15) {
+            if (Math.abs(centerPoint.x - posX) < 15 &&
+              Math.abs(centerPoint.y - posY) < 15) {
               return this._grid[y][x];
             }
           }

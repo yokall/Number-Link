@@ -14,6 +14,10 @@ class Path {
     this._maxLength = length;
   }
 
+  get lastPoint() {
+    return this._points[this._points.length - 1];
+  }
+
   addPoint(point) {
     // cant move diagonally
     if (this._currentPoint && this._currentPoint.x != point.x && this._currentPoint.y != point.y) {

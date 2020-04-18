@@ -10,7 +10,7 @@ function setup() {
 }
 
 function mouseDragged() {
-  var currentSquare = grid.getMouseSquare();
+  var currentSquare = grid.getSquareAtPosition(mouseX, mouseY);
 
   if (currentSquare) {
     if ((currentPath.length == 0 && currentSquare.startSquare > 0) || currentPath.length > 0) {
@@ -25,7 +25,10 @@ function mouseDragged() {
 
 function mouseClicked() {
   if (currentPath.length > 0) {
-    paths.push(currentPath);
+    if (grid.getSquareAtPosition(currentPath.lastPoint.x, currentPath.lastPoint.y).isEndSquare) {
+      paths.push(currentPath);
+    }
+
     currentPath = new Path();
   }
 }
