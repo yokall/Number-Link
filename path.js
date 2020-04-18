@@ -1,53 +1,55 @@
-function Path() {
-  var points = [];
-  var currentPoint = null;
-  var previousPoint = null;
-  var maxLength = 100;
-
-  this.length = function () {
-    return points.length;
+class Path {
+  constructor() {
+    this._points = [];
+    this._currentPoint = null;
+    this._previousPoint = null;
+    this._maxLength = 100;
   }
 
-  this.setMaxLength = function (length) {
-    maxLength = length;
+  get length() {
+    return this._points.length;
   }
 
-  this.addPoint = function (point) {
+  set maxLength(length) {
+    this._maxLength = length;
+  }
+
+  addPoint(point) {
     // cant move diagonally
-    if (currentPoint && currentPoint.x != point.x && currentPoint.y != point.y) {
+    if (this._currentPoint && this._currentPoint.x != point.x && this._currentPoint.y != point.y) {
       return;
     }
 
-    if (previousPoint && point.x == previousPoint.x && point.y == previousPoint.y) {
-      points.pop();
-      currentPoint = points[points.length - 1];
-      previousPoint = points[points.length - 2];
+    if (this._previousPoint && point.x == this._previousPoint.x && point.y == this._previousPoint.y) {
+      this._points.pop();
+      this._currentPoint = this._points[this._points.length - 1];
+      this._previousPoint = this._points[this._points.length - 2];
     } else {
 
       // cant move into existing path point
-      for (var i = 0; i < points.length; i++) {
-        if (points[i].x == point.x && points[i].y == point.y) {
+      for (var i = 0; i < this._points.length; i++) {
+        if (this._points[i].x == point.x && this._points[i].y == point.y) {
           return;
         }
       }
 
 
       // path can be longer than max length
-      if (points.length == maxLength) {
+      if (this._points.length == this._maxLength) {
         return;
       }
 
-      points.push(point);
+      this._points.push(point);
 
-      previousPoint = currentPoint;
-      currentPoint = point;
+      this._previousPoint = this._currentPoint;
+      this._currentPoint = point;
     }
   }
 
-  this.draw = function () {
-    for (var i = 0; i < points.length; i++) {
+  draw() {
+    for (var i = 0; i < this._points.length; i++) {
       fill('blue');
-      ellipse(points[i].x, points[i].y, points[i].diameter, points[i].diameter);
+      ellipse(this._points[i].x, this._points[i].y, this._points[i].diameter, this._points[i].diameter);
       noFill();
     }
   }

@@ -1,42 +1,60 @@
-function Square(x, y, start, end) {
-  this.x = x;
-  this.y = y;
-  this.startSquare = start;
-  this.endSquare = end;
+class Square {
+  constructor(x, y, start, end) {
+    this._x = x;
+    this._y = y;
+    this._startSquare = start;
+    this._endSquare = end;
 
-  this.width = 50;
-  this.height = 50;
+    this._width = 50;
+    this._height = 50;
+  }
 
-  this.draw = function () {
-    if (mouseX > this.x &&
-      mouseX < this.x + this.width &&
-      mouseY > this.y &&
-      mouseY < this.y + this.height) {
+  get x() {
+    return this._x;
+  }
+
+  get y() {
+    return this._y;
+  }
+
+  get startSquare() {
+    return this._startSquare;
+  }
+
+  get endSquare() {
+    return this._endSquare;
+  }
+
+  draw() {
+    if (mouseX > this._x &&
+      mouseX < this._x + this._width &&
+      mouseY > this._y &&
+      mouseY < this._y + this._height) {
       fill('red');
     } else {
       fill(18, 17, 17);
     }
 
-    rect(this.x, this.y, this.width, this.height);
+    rect(this._x, this._y, this._width, this._height);
 
-    if (this.startSquare > 0) {
+    if (this._startSquare > 0) {
       fill(156, 156, 156);
-      ellipse(this.x + 25, this.y + 25, 40, 40);
+      ellipse(this._x + 25, this._y + 25, 40, 40);
       fill('white');
       textSize(32);
-      text(this.startSquare, this.x + 15, this.y + 35);
+      text(this._startSquare, this._x + 15, this._y + 35);
     }
 
-    if (this.endSquare > 0) {
+    if (this._endSquare > 0) {
       fill(156, 156, 156);
-      ellipse(this.x + 25, this.y + 25, 40, 40);
+      ellipse(this._x + 25, this._y + 25, 40, 40);
       fill('white');
       textSize(32);
-      text("X", this.x + 15, this.y + 35);
+      text("X", this._x + 15, this._y + 35);
     }
   }
 
-  this.center = function () {
-    return new Point(this.x + (this.width / 2), this.y + (this.height / 2));
+  center() {
+    return new Point(this._x + (this._width / 2), this._y + (this._height / 2));
   }
 }
