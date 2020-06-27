@@ -10,6 +10,10 @@ This means that each path starts at a number square and ends at an "X" square.  
 
 To create a playable Numberlink puzzle and eventually implement a solver
 
+# Try it
+
+https://yokall.github.io/Number-Link/
+
 # Current progress
 
 Right now there is
@@ -25,6 +29,8 @@ Right now there is
 * Remove paths
 * Implement a solver
 
-# Try it
+# Testing
 
-https://yokall.github.io/Number-Link/
+`npm test` will run the test suite once
+
+`karma start` will run the tests and rerun when any files are changed

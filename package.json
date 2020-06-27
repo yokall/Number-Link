@@ -1,0 +1,27 @@
+{
+  "name": "number-link",
+  "version": "1.0.0",
+  "description": "Number link puzzle",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yokall/Number-Link.git"
+  },
+  "author": "Colin Campbell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yokall/Number-Link/issues"
+  },
+  "homepage": "https://github.com/yokall/Number-Link#readme",
+  "devDependencies": {
+    "jasmine-core": "^3.5.0",
+    "karma": "^5.0.9",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.2",
+    "karma-jasmine": "^3.3.0",
+    "puppeteer": "^3.3.0"
+  }
+}
